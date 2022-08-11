@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc --project ./",
     "dev": "ts-node-dev --respawn ./src/run.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --testTimeout=10000"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,10 @@
     "ts-node": "^10.9.1"
   },
   "devDependencies": {
+    "@types/jest": "^28.1.6",
+    "@types/lodash": "^4.14.182",
+    "@types/supertest": "^2.0.12",
+    "supertest": "^6.2.4",
     "ts-jest": "^28.0.7",
     "ts-node-dev": "^2.0.0",
     "typescript": "^4.7.4"

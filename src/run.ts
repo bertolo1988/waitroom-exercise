@@ -1,6 +1,5 @@
-import { ServerConfig } from './config';
-import { graphQLServer } from './server';
+import { runServer } from './server';
 
-graphQLServer.listen({ port: ServerConfig.PORT }).then(({ url }) => {
-  console.log(`🚀  Server  ready at ${url}`);
+runServer().then(({ url }) => {
+  console.log(`🚀 Server ready at ${url}`);
 });
