@@ -4,7 +4,9 @@ import { importSchema } from 'graphql-import';
 
 import { resolvers } from './resolvers';
 
+const schemaPath = path.resolve(__dirname, './schema.graphql');
+
 export const graphQLServer = new ApolloServer({
   resolvers,
-  typeDefs: importSchema(path.resolve(__dirname, '../schema/schema.graphql')),
+  typeDefs: importSchema(schemaPath),
 });
