@@ -22,7 +22,7 @@
 
 ```
 # creates a migration with the name text
-npm run migrate create --name text.sql
+npm run migrate -- create --name text.sql
 ```
 
 ### Run migrations
