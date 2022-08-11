@@ -1,5 +1,10 @@
 import { runServer } from './server';
 
-runServer().then(({ url }) => {
-  console.log(`🚀 Server ready at ${url}`);
-});
+try {
+  runServer().then(({ url }) => {
+    console.log(`🚀 Server ready at ${url}`);
+  });
+} catch (error) {
+  // eslint-disable-next-line no-console
+  console.log(error);
+}
