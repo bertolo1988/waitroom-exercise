@@ -14,6 +14,15 @@ export type Scalars = {
   Float: number;
 };
 
+export type AiResponse = {
+  __typename?: 'AiResponse';
+  body: Scalars['String'];
+  id: Scalars['ID'];
+  openAiID: Scalars['ID'];
+  textHash: Scalars['String'];
+  title: Scalars['String'];
+};
+
 export type Mutation = {
   __typename?: 'Mutation';
   saveTextWithTitle?: Maybe<SaveTextWithTitleResponse>;
@@ -103,6 +112,7 @@ export type DirectiveResolverFn<TResult = {}, TParent = {}, TContext = {}, TArgs
 
 /** Mapping between all available schema types and the resolvers types */
 export type ResolversTypes = {
+  AiResponse: ResolverTypeWrapper<AiResponse>;
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
   ID: ResolverTypeWrapper<Scalars['ID']>;
   Mutation: ResolverTypeWrapper<{}>;
@@ -113,12 +123,22 @@ export type ResolversTypes = {
 
 /** Mapping between all available schema types and the resolvers parents */
 export type ResolversParentTypes = {
+  AiResponse: AiResponse;
   Boolean: Scalars['Boolean'];
   ID: Scalars['ID'];
   Mutation: {};
   Query: {};
   SaveTextWithTitleResponse: SaveTextWithTitleResponse;
   String: Scalars['String'];
+};
+
+export type AiResponseResolvers<ContextType = any, ParentType extends ResolversParentTypes['AiResponse'] = ResolversParentTypes['AiResponse']> = {
+  body?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+  openAiID?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+  textHash?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  title?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
 export type MutationResolvers<ContextType = any, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = {
@@ -135,6 +155,7 @@ export type SaveTextWithTitleResponseResolvers<ContextType = any, ParentType ext
 };
 
 export type Resolvers<ContextType = any> = {
+  AiResponse?: AiResponseResolvers<ContextType>;
   Mutation?: MutationResolvers<ContextType>;
   Query?: QueryResolvers<ContextType>;
   SaveTextWithTitleResponse?: SaveTextWithTitleResponseResolvers<ContextType>;
