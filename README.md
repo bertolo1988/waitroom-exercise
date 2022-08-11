@@ -8,9 +8,15 @@
 
 `npm i`
 
+## Data seed
+
+`npm run seed`
+
 ## Tests
 
 `npm run test`
+
+(don't forget to seed the data before)
 
 ## How to run
 
@@ -34,7 +40,6 @@ npm run migrate -- create --name text.sql
 `npm run migrate down`
 
 For more information check [here](https://github.com/mmkal/slonik-tools/tree/master/packages/migrator#readme).
-
 
 ### OpenAI response type on completion
 
