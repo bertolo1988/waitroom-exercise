@@ -1,0 +1,1 @@
+CREATE INDEX idx_text_hash ON ai_response(text_hash);
