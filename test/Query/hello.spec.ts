@@ -1,4 +1,4 @@
-require('dotenv').config();
+import { describe, expect, it, beforeAll, afterAll } from '@jest/globals';
 import request from 'supertest';
 
 import { runServer, stopServer } from '../../src/server';

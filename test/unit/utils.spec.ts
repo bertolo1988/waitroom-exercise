@@ -1,4 +1,4 @@
-require('dotenv').config();
+import { describe, expect, it } from '@jest/globals';
 import { Utils } from '../../src/utils';
 
 describe('Utils', () => {
