@@ -9,3 +9,11 @@ type Mutation {
 type SaveTextWithTitleResponse {
   id: ID!
 }
+
+type AiResponse {
+  id: ID!
+  textHash: String!
+  openAiID: ID!
+  title: String!
+  body: String!
+}
