@@ -11,7 +11,8 @@
     "clean": "rm -rf node_modules",
     "prettier:format": "npx prettier --write .",
     "prettier:check": "npx prettier --check .",
-    "generate-types": "graphql-codegen --config codegen.yml"
+    "generate-types": "graphql-codegen --config codegen.yml",
+    "migrate": "ts-node ./src/bin/migrate.ts"
   },
   "repository": {
     "type": "git",
@@ -31,7 +32,7 @@
     "graphql-import": "^1.0.2",
     "lodash": "^4.17.21",
     "openai-api": "^1.3.1",
-    "slonik": "^30.1.2",
+    "slonik": "^29.0.0",
     "ts-node": "^10.9.1"
   },
   "devDependencies": {
@@ -39,6 +40,7 @@
     "@graphql-codegen/introspection": "2.2.1",
     "@graphql-codegen/typescript": "2.7.3",
     "@graphql-codegen/typescript-resolvers": "2.7.3",
+    "@slonik/migrator": "^0.11.3",
     "@types/jest": "^28.1.6",
     "@types/lodash": "^4.14.182",
     "@types/supertest": "^2.0.12",
