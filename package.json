@@ -1,0 +1,27 @@
+{
+  "name": "waitroom-exercise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bertolo1988/waitroom-exercise.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bertolo1988/waitroom-exercise/issues"
+  },
+  "homepage": "https://github.com/bertolo1988/waitroom-exercise#readme",
+  "dependencies": {
+    "apollo-server": "^3.10.1",
+    "dotenv": "^16.0.1",
+    "graphql": "^15.4.0",
+    "graphql-import": "^1.0.2",
+    "typescript": "^4.7.4"
+  }
+}
