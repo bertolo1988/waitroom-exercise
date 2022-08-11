@@ -12,7 +12,8 @@
     "prettier:format": "npx prettier --write .",
     "prettier:check": "npx prettier --check .",
     "generate-types": "graphql-codegen --config codegen.yml",
-    "migrate": "ts-node ./src/bin/migrate.ts"
+    "migrate": "ts-node ./src/bin/migrate.ts",
+    "seed":"ts-node ./src/bin/seedData.ts"
   },
   "repository": {
     "type": "git",
