@@ -1,13 +1,7 @@
-import { QueryResolvers } from '../generated/types';
 import { Mutation } from './Mutation';
-
-const helloResolver: QueryResolvers['hello'] = async () => {
-  return 'hello!';
-};
+import { Query } from './Query';
 
 export const resolvers = {
-  Query: {
-    hello: helloResolver,
-  },
+  Query,
   Mutation,
 };
