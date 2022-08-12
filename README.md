@@ -23,6 +23,10 @@ docker run
 
 `npm i`
 
+## Run migrations
+
+`npm run migrate up`
+
 ## Data seed
 
 `npm run seed`
@@ -37,20 +41,14 @@ docker run
 
 `npm run dev`
 
-## Migrations
-
-### Create migration
+## Create migration
 
 ```
 # creates a migration with the name text
 npm run migrate -- create --name text.sql
 ```
 
-### Run migrations
-
-`npm run migrate up`
-
-### Undo last migration
+## Undo last migration
 
 `npm run migrate down`
 
