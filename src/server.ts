@@ -15,7 +15,7 @@ if (!POSTGRES_CONNECTION_STRING) {
 
 export let graphQLServer: ApolloServer;
 
-export async function runServer() {
+export async function runServer(port = ServerConfig.PORT) {
   const pool = createPool(POSTGRES_CONNECTION_STRING as string, {
     captureStackTrace: false,
     connectionTimeout: 60 * 1_000,
@@ -30,7 +30,7 @@ export async function runServer() {
     typeDefs: importSchema(schemaPath),
   });
 
-  return graphQLServer.listen({ port: ServerConfig.PORT });
+  return graphQLServer.listen({ port });
 }
 
 export async function stopServer() {
