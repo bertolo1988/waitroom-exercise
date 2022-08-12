@@ -1,4 +1,11 @@
-import { describe, it, beforeAll, afterAll, jest } from '@jest/globals';
+import {
+  describe,
+  it,
+  beforeAll,
+  afterAll,
+  jest,
+  afterEach,
+} from '@jest/globals';
 import request from 'supertest';
 
 import { Utils } from '../../src/utils';
@@ -58,14 +65,12 @@ describe('saveTextWithTitle', () => {
 
       expect(insertAiResponseSpy).not.toHaveBeenCalled();
       expect(response.body.data.saveTextWithTitle.id).toBe('1');
-
-      insertAiResponseSpy.mockRestore();
     });
 
     it('should not send another request to openAiAPI if the text already exists in the database', async () => {
       const getCompletionForTextMock = jest
         .spyOn(OpenAi, 'getCompletionForText')
-        .mockImplementation(async () => {
+        .mockImplementationOnce(async () => {
           return completionResponse;
         });
 
@@ -87,16 +92,14 @@ describe('saveTextWithTitle', () => {
 
       expect(getCompletionForTextMock).not.toHaveBeenCalled();
       expect(response.body.data.saveTextWithTitle.id).toBe('1');
-
-      getCompletionForTextMock.mockRestore();
     });
   });
 
   describe(' - new text - ', () => {
     it('should create a new ai_response record with an hash generated using Utils.createHash', async () => {
-      const getCompletionForTextMock = jest
+      jest
         .spyOn(OpenAi, 'getCompletionForText')
-        .mockImplementation(async () => {
+        .mockImplementationOnce(async () => {
           return completionResponse;
         });
 
@@ -126,15 +129,12 @@ describe('saveTextWithTitle', () => {
       );
 
       expect(response.body.data.saveTextWithTitle.id).toBeDefined();
-
-      getCompletionForTextMock.mockRestore();
-      insertAiResponseSpy.mockRestore();
     });
 
     it('should create a new ai_response record with a title created using openAi', async () => {
-      const getCompletionForTextMock = jest
+      jest
         .spyOn(OpenAi, 'getCompletionForText')
-        .mockImplementation(async () => {
+        .mockImplementationOnce(async () => {
           return completionResponse;
         });
 
@@ -163,9 +163,6 @@ describe('saveTextWithTitle', () => {
       );
 
       expect(response.body.data.saveTextWithTitle.id).toBeDefined();
-
-      getCompletionForTextMock.mockRestore();
-      insertAiResponseSpy.mockRestore();
     });
   });
 });
