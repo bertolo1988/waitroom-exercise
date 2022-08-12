@@ -1,11 +1,4 @@
-import {
-  describe,
-  it,
-  beforeAll,
-  afterAll,
-  jest,
-  afterEach,
-} from '@jest/globals';
+import { describe, it, beforeAll, afterAll, jest } from '@jest/globals';
 import request from 'supertest';
 
 import { Utils } from '../../src/utils';
