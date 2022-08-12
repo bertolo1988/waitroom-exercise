@@ -35,7 +35,13 @@ export type MutationSaveTextWithTitleArgs = {
 
 export type Query = {
   __typename?: 'Query';
+  getAiResponse?: Maybe<AiResponse>;
   hello: Scalars['String'];
+};
+
+
+export type QueryGetAiResponseArgs = {
+  id: Scalars['Int'];
 };
 
 export type SaveTextWithTitleResponse = {
@@ -115,6 +121,7 @@ export type ResolversTypes = {
   AiResponse: ResolverTypeWrapper<AiResponse>;
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
   ID: ResolverTypeWrapper<Scalars['ID']>;
+  Int: ResolverTypeWrapper<Scalars['Int']>;
   Mutation: ResolverTypeWrapper<{}>;
   Query: ResolverTypeWrapper<{}>;
   SaveTextWithTitleResponse: ResolverTypeWrapper<SaveTextWithTitleResponse>;
@@ -126,6 +133,7 @@ export type ResolversParentTypes = {
   AiResponse: AiResponse;
   Boolean: Scalars['Boolean'];
   ID: Scalars['ID'];
+  Int: Scalars['Int'];
   Mutation: {};
   Query: {};
   SaveTextWithTitleResponse: SaveTextWithTitleResponse;
@@ -146,6 +154,7 @@ export type MutationResolvers<ContextType = any, ParentType extends ResolversPar
 };
 
 export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
+  getAiResponse?: Resolver<Maybe<ResolversTypes['AiResponse']>, ParentType, ContextType, RequireFields<QueryGetAiResponseArgs, 'id'>>;
   hello?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
 };
 
